@@ -137,11 +137,6 @@ class SyncStrategy(BaseStrategy):
                             sasl_received_data = self.connection.ntlm_client.unseal(sasl_received_data[:sasl_buffer_length])
                         
                         elif self.connection.sasl_mechanism == GSSAPI:
-                            if posix_gssapi_unavailable:
-                                import winkerberos
-                                winkerberos.authGSSClientUnwrap(self.connection.krb_ctx, base64.b64encode(sasl_received_data[:sasl_buffer_length]).decode('utf-8'))
-                                sasl_received_data = base64.b64decode(winkerberos.authGSSClientResponse(self.connection.krb_ctx))
-                            else:
                                 sasl_received_data = self.connection.krb_ctx.unwrap(sasl_received_data[:sasl_buffer_length]).message
                         
                         sasl_total_bytes_received = 0
