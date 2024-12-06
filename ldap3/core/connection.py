@@ -1370,9 +1370,6 @@ class Connection(object):
                         result = sasl_external(self, controls)
                     elif self.sasl_mechanism == DIGEST_MD5:
                         result = sasl_digest_md5(self, controls)
-                    elif self.sasl_mechanism == GSSAPI:
-                        from ..protocol.sasl.kerberos import sasl_gssapi  # needs the gssapi package
-                        result = sasl_gssapi(self, controls)
                     elif self.sasl_mechanism == 'PLAIN':
                         result = sasl_plain(self, controls)
                 finally:

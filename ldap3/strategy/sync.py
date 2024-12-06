@@ -32,7 +32,6 @@ from ..protocol.rfc4511 import LDAPMessage
 from ..utils.log import log, log_enabled, ERROR, NETWORK, EXTENDED, format_ldap_message
 from ..utils.asn1 import decoder, decode_message_fast
 from ..protocol.sasl.digestMd5 import md5_hmac
-from ..protocol.sasl.kerberos import posix_gssapi_unavailable
 
 LDAP_MESSAGE_TEMPLATE = LDAPMessage()
 

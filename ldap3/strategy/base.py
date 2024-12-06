@@ -63,7 +63,6 @@ from ..utils.log import log, log_enabled, ERROR, BASIC, PROTOCOL, NETWORK, EXTEN
 from ..utils.asn1 import encode, decoder, ldap_result_to_dict_fast, decode_sequence
 from ..utils.conv import to_unicode
 from ..protocol.sasl.digestMd5 import md5_h, md5_hmac
-from ..protocol.sasl.kerberos import posix_gssapi_unavailable
 
 SESSION_TERMINATED_BY_SERVER = 'TERMINATED_BY_SERVER'
 TRANSACTION_ERROR = 'TRANSACTION_ERROR'
